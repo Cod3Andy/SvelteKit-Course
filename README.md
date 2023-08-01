@@ -1,3 +1,5 @@
+Complete SvelteKit Course For Building Modern Web Apps tutorial(https://www.youtube.com/watch?v=MoGkX4RvZ38).
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).

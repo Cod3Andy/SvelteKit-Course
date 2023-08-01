@@ -9,7 +9,7 @@ export const GET: RequestHandler = async (event) => {
     });
 
     event.setHeaders({
-        'Cache-Control': 'max-age-60',
+        'Cache-Control': 'public, max-age=0, s-maxage=60',
     });
 
     return json(posts);

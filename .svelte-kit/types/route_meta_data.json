@@ -1,5 +1,7 @@
 {
-	"/": [],
+	"/": [
+		"src/routes/+page.ts"
+	],
 	"/[[lang]]/about": [],
 	"/api/newsletter": [
 		"src/routes/api/newsletter/+server.ts"
@@ -9,9 +11,16 @@
 	],
 	"/image/[width]x[height]": [],
 	"/media/[...file]/[width]/[height]": [],
-	"/posts": [],
-	"/posts/create": [
-		"src/routes/posts/create/+page.ts"
+	"/posts": [
+		"src/routes/posts/+layout.server.ts",
+		"src/routes/posts/+layout.server.ts"
 	],
-	"/posts/[slug=slug]": []
+	"/posts/create": [
+		"src/routes/posts/create/+page.ts",
+		"src/routes/posts/+layout.server.ts"
+	],
+	"/posts/[slug]": [
+		"src/routes/posts/[slug]/+page.server.ts",
+		"src/routes/posts/+layout.server.ts"
+	]
 }
