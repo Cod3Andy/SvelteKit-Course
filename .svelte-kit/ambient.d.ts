@@ -26,6 +26,7 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const DATABASE_URL: string;
 	export const GJS_DEBUG_TOPICS: string;
 	export const LESSOPEN: string;
 	export const CONDA_PROMPT_MODIFIER: string;
@@ -86,6 +87,7 @@ declare module '$env/static/private' {
 	export const XDG_DATA_DIRS_VSCODE_SNAP_ORIG: string;
 	export const npm_package_scripts_lint: string;
 	export const npm_package_devDependencies__typescript_eslint_eslint_plugin: string;
+	export const npm_package_dependencies__prisma_client: string;
 	export const npm_config_registry: string;
 	export const USERNAME: string;
 	export const TERM: string;
@@ -133,6 +135,7 @@ declare module '$env/static/private' {
 	export const SHELL: string;
 	export const LC_NAME: string;
 	export const npm_package_version: string;
+	export const npm_package_prisma_seed: string;
 	export const npm_lifecycle_event: string;
 	export const NODE_PATH: string;
 	export const QT_ACCESSIBILITY: string;
@@ -196,6 +199,7 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		DATABASE_URL: string;
 		GJS_DEBUG_TOPICS: string;
 		LESSOPEN: string;
 		CONDA_PROMPT_MODIFIER: string;
@@ -256,6 +260,7 @@ declare module '$env/dynamic/private' {
 		XDG_DATA_DIRS_VSCODE_SNAP_ORIG: string;
 		npm_package_scripts_lint: string;
 		npm_package_devDependencies__typescript_eslint_eslint_plugin: string;
+		npm_package_dependencies__prisma_client: string;
 		npm_config_registry: string;
 		USERNAME: string;
 		TERM: string;
@@ -303,6 +308,7 @@ declare module '$env/dynamic/private' {
 		SHELL: string;
 		LC_NAME: string;
 		npm_package_version: string;
+		npm_package_prisma_seed: string;
 		npm_lifecycle_event: string;
 		NODE_PATH: string;
 		QT_ACCESSIBILITY: string;

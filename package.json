@@ -33,7 +33,11 @@
 		"vitest": "^0.32.2"
 	},
 	"type": "module",
+	"prisma": {
+		"seed": "pnpx vite-node prisma/seed.ts"
+	},
 	"dependencies": {
+		"@prisma/client": "^5.0.0",
 		"esbuild": "^0.18.17"
 	}
 }

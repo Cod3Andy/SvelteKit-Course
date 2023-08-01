@@ -1,6 +1,12 @@
 {
 	"/": [],
 	"/[[lang]]/about": [],
+	"/api/newsletter": [
+		"src/routes/api/newsletter/+server.ts"
+	],
+	"/api/posts": [
+		"src/routes/api/posts/+server.ts"
+	],
 	"/image/[width]x[height]": [],
 	"/media/[...file]/[width]/[height]": [],
 	"/posts": [],
