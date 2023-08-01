@@ -1,0 +1,16 @@
+body {
+    padding: 2rem;
+    background-color: darkblue;
+}
+
+h1 {
+    line-height: 1;
+    text-transform: capitalize;
+    color: beige;
+}
+
+ul {
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+}
