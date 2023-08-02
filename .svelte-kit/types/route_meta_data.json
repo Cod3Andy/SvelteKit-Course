@@ -22,5 +22,9 @@
 	"/posts/[slug]": [
 		"src/routes/posts/[slug]/+page.server.ts",
 		"src/routes/posts/+layout.server.ts"
+	],
+	"/todos": [
+		"src/routes/todos/+page.server.ts",
+		"src/routes/todos/+server.ts"
 	]
 }

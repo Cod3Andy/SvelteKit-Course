@@ -51,14 +51,28 @@
 {/await} -->
 
 <script lang="ts">
-	import type { PageData } from "./$types";
+	import { invalidate, invalidateAll } from "$app/navigation";
+    import type { PageData } from "./$types";
 
     export let data: PageData
 
     $: ({ posts } = data)
+
+    function rerunLoadFunction(){
+    // 1st method:
+    invalidate('posts');
+    // 2nd method(works with stable url):
+    //invalidate('api/posts');
+    // 3rd method:
+    //invalidate(url => url.href.includes('posts'));
+    // 4th method(nuclear option):
+    //invalidateAll()
+    }
 </script>
 
 <h1>Posts</h1>
+
+<button on:click={rerunLoadFunction}>Rerun</button>
 
 <p>Showing {posts.length} posts.</p>
 
@@ -69,3 +83,11 @@
         </li>
     </ul>
 {/each}
+
+<h1>Forms</h1>
+
+<form method="GET" action="/login">
+    <input type="text" name="user"/>
+    <input type="password" name="password"/>
+    <button type="submit">Login</button>
+</form>
