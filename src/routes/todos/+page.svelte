@@ -1,55 +1,71 @@
 <script lang="ts">
-	import { invalidate, invalidateAll } from '$app/navigation';
-    import type { PageData } from './$types';
+	import { enhance } from '$app/forms';
 
-    type Data = {
-    success: boolean
-    errors: Record<string, string>
-    };
+	//import { invalidate, invalidateAll } from '$app/navigation';
+    import type { ActionData, PageData, SubmitFunction } from './$types';
     
     export let data: PageData;
+    export let form: ActionData;
+
+    let loading = false;
+
+    const addTodo: SubmitFunction = () => {
+        //do something b4 the form sumbits
+            loading = true;
+        return async ({ update }) => {
+            //do something after the form sumbits
+            loading = false;
+            await update();
+        };
+    };
+
+
+    // type Data = {
+    // success: boolean
+    // errors: Record<string, string>
+    // };
     
-    let form: Data;
+    // let form: Data;
 
-    async function addTodo(event: Event){
-        const formEl = event.target as HTMLFormElement;
-        const data = new FormData(formEl);
+    // async function addTodo(event: Event){
+    //     const formEl = event.target as HTMLFormElement;
+    //     const data = new FormData(formEl);
 
-        const response = await fetch(formEl.action, {
-            method: 'POST',
-            body: data,
-        });
-        const responseData = await response.json();
+    //     const response = await fetch(formEl.action, {
+    //         method: 'POST',
+    //         body: data,
+    //     });
+    //     const responseData = await response.json();
         
-        form = responseData;
+    //     form = responseData;
 
-        formEl.reset();
+    //     formEl.reset();
 
-        await invalidateAll();
-    };
+    //     await invalidateAll();
+    // };
 
-    async function removeTodo(event: Event){
-        const formEl = event.target as HTMLFormElement;
-        const data = new FormData(formEl);
+    // async function removeTodo(event: Event){
+    //     const formEl = event.target as HTMLFormElement;
+    //     const data = new FormData(formEl);
 
-        const response = await fetch(formEl.action, {
-            method: 'DELETE',
-            body: data,
-        });
+    //     const response = await fetch(formEl.action, {
+    //         method: 'DELETE',
+    //         body: data,
+    //     });
 
-        await invalidateAll();
-    };
+    //     await invalidateAll();
+    // };
 </script>
 
 <pre>
-    {JSON.stringify(data, null, 2)}
+    {JSON.stringify(form, null, 2)}
 </pre>
 
 <ul>
     {#each data.todos as todo}
         <li>
             <span>{todo.text}</span>
-            <form on:submit|preventDefault={removeTodo} method="POST">
+            <form method="POST" action="?/removeTodo" use:enhance>
                 <input type="hidden" name="id" value={todo.id}/>
                 <button class="delete" type="submit">X</button>
             </form>
@@ -57,12 +73,17 @@
     {/each}
 </ul>
 
-<form on:submit|preventDefault={addTodo} method="POST">
+<form method="POST" action="?/addTodo" use:enhance={addTodo}>
     <input type="text" name="todo"/>
-    {#if form?.errors?.todo}
+    {#if form?.missing}
         <p class="error">This field is required</p>
     {/if}
-    <button type="submit">Add Todo</button>
+    <button 
+    aria-busy={loading} 
+    class:secondary={loading} 
+    type="submit">{#if !loading}Add Todo{/if}</button>
+
+    <button formaction="?/clearTodos" class="secondary" type="submit">Clear</button>
 </form>
 
 {#if form?.success}
