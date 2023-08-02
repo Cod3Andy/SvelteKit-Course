@@ -29,6 +29,7 @@ declare module '$env/static/private' {
 	export const DATABASE_URL: string;
 	export const GJS_DEBUG_TOPICS: string;
 	export const LESSOPEN: string;
+	export const npm_package_dependencies_zod: string;
 	export const CONDA_PROMPT_MODIFIER: string;
 	export const npm_package_devDependencies_vitest: string;
 	export const USER: string;
@@ -109,6 +110,7 @@ declare module '$env/static/private' {
 	export const XDG_RUNTIME_DIR: string;
 	export const GDK_BACKEND: string;
 	export const npm_package_scripts_test_integration: string;
+	export const npm_package_dependencies_zod_form_data: string;
 	export const npm_config_frozen_lockfile: string;
 	export const DISPLAY: string;
 	export const LOCPATH: string;
@@ -202,6 +204,7 @@ declare module '$env/dynamic/private' {
 		DATABASE_URL: string;
 		GJS_DEBUG_TOPICS: string;
 		LESSOPEN: string;
+		npm_package_dependencies_zod: string;
 		CONDA_PROMPT_MODIFIER: string;
 		npm_package_devDependencies_vitest: string;
 		USER: string;
@@ -282,6 +285,7 @@ declare module '$env/dynamic/private' {
 		XDG_RUNTIME_DIR: string;
 		GDK_BACKEND: string;
 		npm_package_scripts_test_integration: string;
+		npm_package_dependencies_zod_form_data: string;
 		npm_config_frozen_lockfile: string;
 		DISPLAY: string;
 		LOCPATH: string;

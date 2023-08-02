@@ -38,6 +38,8 @@
 	},
 	"dependencies": {
 		"@prisma/client": "^5.0.0",
-		"esbuild": "^0.18.17"
+		"esbuild": "^0.18.17",
+		"zod": "^3.21.4",
+		"zod-form-data": "^2.0.1"
 	}
 }
