@@ -70,7 +70,7 @@
     }
 
 
-
+//////////////////////////////////////////////////////
 
 
     import { applyAction, enhance } from "$app/forms";
@@ -86,6 +86,10 @@
             };
         };
     };
+
+///////////////////////////////////
+    import { page } from '$app/stores';
+
 </script>
 
 <h1>Posts</h1>
@@ -119,6 +123,10 @@
     {/if}
     <button type="submit">Login</button>
 </form>
+
+{#if $page.data.user}
+    Welcome {$page.data.user}
+{/if}
 
 <style>
     .error{

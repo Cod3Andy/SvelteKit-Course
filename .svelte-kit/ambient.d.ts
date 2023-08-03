@@ -150,6 +150,7 @@ declare module '$env/static/private' {
 	export const CONDA_DEFAULT_ENV: string;
 	export const GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG: string;
 	export const LC_MEASUREMENT: string;
+	export const npm_package_dependencies_parse_nested_form_data: string;
 	export const GPG_AGENT_INFO: string;
 	export const GJS_DEBUG_OUTPUT: string;
 	export const LC_IDENTIFICATION: string;
@@ -325,6 +326,7 @@ declare module '$env/dynamic/private' {
 		CONDA_DEFAULT_ENV: string;
 		GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG: string;
 		LC_MEASUREMENT: string;
+		npm_package_dependencies_parse_nested_form_data: string;
 		GPG_AGENT_INFO: string;
 		GJS_DEBUG_OUTPUT: string;
 		LC_IDENTIFICATION: string;

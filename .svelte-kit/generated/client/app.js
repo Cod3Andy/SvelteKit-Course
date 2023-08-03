@@ -16,10 +16,10 @@ export const nodes = [
 	() => import('./nodes/12')
 ];
 
-export const server_loads = [2];
+export const server_loads = [0,2];
 
 export const dictionary = {
-		"/": [4],
+		"/": [~4],
 		"/[[lang]]/about": [5],
 		"/image/[width]x[height]": [6],
 		"/login": [~7],
